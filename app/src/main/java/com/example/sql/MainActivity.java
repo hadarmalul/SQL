@@ -12,6 +12,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Switch;
 
+/**
+ * @author Hadar Malul
+ * @since 17.2.2020
+ */
 public class MainActivity extends AppCompatActivity {
 
     SQLiteDatabase db;
@@ -37,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
         db.close();
     }
 
+    /**
+     * put in variables the edittext input
+     * put in content value the field name and the value
+     * @param view
+     */
     public void enterdata(View view) {
 
         String name, address, strNum, strHnum, mName, strMnum, dName, strDnum;
@@ -68,6 +77,12 @@ public class MainActivity extends AppCompatActivity {
         db.insert(Users.TABLE_USERS, null, cv);
         db.close();
     }
+
+    /**
+     * creates options menu that moves to other activities
+     * @param menu
+     * @return
+     */
 
     public boolean onCreateOptionsMenu (Menu menu){
         getMenuInflater().inflate(R.menu.main,menu);

@@ -30,6 +30,11 @@ public class Grades extends AppCompatActivity {
         db.close();
     }
 
+    /**
+     * put in variables the edittext input
+     * put in content value the field name and the value
+     * @param view
+     */
     public void entergrades(View view) {
 
         String name, strQuar, strGrade;
@@ -50,6 +55,11 @@ public class Grades extends AppCompatActivity {
         db.close();
 
     }
+    /**
+     * creates options menu that moves to other activities
+     * @param menu
+     * @return
+     */
 
     public boolean onCreateOptionsMenu (Menu menu){
         getMenuInflater().inflate(R.menu.main,menu);

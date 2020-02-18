@@ -54,6 +54,9 @@ public class SortActivity extends AppCompatActivity implements AdapterView.OnIte
         hlp=new HelperDB(this);
         db=hlp.getWritableDatabase();
         db.close();
+        /**
+         sets the listView
+         */
 
         lvT.setOnItemClickListener(this);
         lvT.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
@@ -72,6 +75,9 @@ public class SortActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (lvT.equals(parent)) {
             table = position;
+            /**
+             * options for sorting
+             */
             if (table==0) {
                 tbl2sort= TABLE_USERS;
                 fields= new String[]{Users.KEY_ID, Users.NAME};
@@ -86,6 +92,9 @@ public class SortActivity extends AppCompatActivity implements AdapterView.OnIte
                 tbl = new ArrayList<>();
                 db=hlp.getReadableDatabase();
                 orderBy=fields[position];
+                /**
+                 * sorts the data according to the option the user clicked
+                 */
                 if (table == 0) {
                     crsr=db.query(TABLE_USERS, columns, selection, selectionArgs, groupBy, having, orderBy, limit);
                     int co1 = crsr.getColumnIndex(Users.KEY_ID);
@@ -140,6 +149,12 @@ public class SortActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         }
     }
+    /**
+     * creates options menu that moves to other activities
+     * @param menu
+     * @return
+     */
+
 
     public boolean onCreateOptionsMenu (Menu menu){
         getMenuInflater().inflate(R.menu.main,menu);

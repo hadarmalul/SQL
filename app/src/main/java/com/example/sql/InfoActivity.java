@@ -43,6 +43,9 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
         db.close();
 
         tableC = 0;
+        /**
+         sets the listView
+         */
 
         lvT.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         lvT.setOnItemClickListener(this);
@@ -62,6 +65,9 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
             arr = new ArrayList<>();
             tableC = position + 1;
             db = hlp.getReadableDatabase();
+            /**
+             * adds the data into the arraylist
+             */
             if (tableC == 1) {
                 crsr = db.query(TABLE_USERS, null, null, null, null, null, null);
                 int co1 = crsr.getColumnIndex(Users.KEY_ID);
@@ -113,6 +119,9 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
             adp2 = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, arr);
             lvR.setAdapter(adp2);
         }
+        /**
+         * when listview row is clicked it deletes the row
+         */
 
         else {
             if (tableC == 1) {
@@ -129,6 +138,11 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
+    /**
+     * creates options menu that moves to other activities
+     * @param menu
+     * @return
+     */
 
     public boolean onCreateOptionsMenu (Menu menu){
         getMenuInflater().inflate(R.menu.main,menu);
