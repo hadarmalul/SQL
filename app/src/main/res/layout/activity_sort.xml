@@ -34,6 +34,7 @@
             android:textColor="@android:color/black" />
 
         <ListView
+            android:id="@+id/lvT"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="13">
@@ -55,6 +56,7 @@
             android:textColor="@android:color/black" />
 
         <ListView
+            android:id="@+id/lvS"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="13" />
@@ -65,7 +67,6 @@
             android:layout_weight="5" />
 
         <TextView
-            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="6"
@@ -74,6 +75,7 @@
             android:textColor="@android:color/black" />
 
         <ListView
+            android:id="@+id/lvSo"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="13" />

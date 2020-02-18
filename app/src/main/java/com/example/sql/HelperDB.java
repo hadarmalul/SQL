@@ -25,31 +25,31 @@ public class HelperDB extends SQLiteOpenHelper {
     String strCreate, strDelete;
 
     public HelperDB(Context context) {
-        super(context,DATABASE_NAME,null, DATABASE_VERSION);
+        super(context, DATABASE_NAME,null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        strCreate = "CREATE TABLE " + TABLE_USERS;
-        strCreate += "(" + KEY_ID + " INTEGER PRIMARY KEY,";
-        strCreate += " " + NAME + " TEXT,";
-        strCreate += " "+ ADDRESS + " TEXT,";
-        strCreate += " " + PHONE + " INTEGER,";
-        strCreate += " " + HOME_P + " INTEGER,";
-        strCreate += " " + MOM_NAME + " TEXT,";
-        strCreate += " " + MOM_NUM + " INTEGER,";
-        strCreate += " " + DAD_NAME + " TEXT,";
-        strCreate += " " + DAD_NUM + " INTEGER,";
-        strCreate += ");";
+        strCreate="CREATE TABLE "+TABLE_USERS;
+        strCreate+=" ("+KEY_ID+" INTEGER PRIMARY KEY,";
+        strCreate+=" "+NAME+" TEXT,";
+        strCreate+=" "+ADDRESS+" TEXT,";
+        strCreate+=" "+PHONE+" INTEGER";
+        strCreate+=" "+HOME_P+" INTEGER";
+        strCreate+=" "+MOM_NAME+" TEXT,";
+        strCreate+=" "+MOM_NUM+" INTEGER";
+        strCreate+=" "+DAD_NAME+" TEXT,";
+        strCreate+=" "+DAD_NUM+" INTEGER";
+        strCreate+=");";
         db.execSQL(strCreate);
 
-        strCreate = "CREATE TABLE " + TABLE_GRADES;
-        strCreate += "(" + KEY_ID + " INTEGER PRIMARY KEY,";
-        strCreate += " " + NAME + " TEXT,";
-        strCreate += " "+ QUARTER + " INTEGER,";
-        strCreate += " " + GRADE + " INTEGER,";
-        strCreate += ");";
+        strCreate="CREATE TABLE " + TABLE_GRADES;
+        strCreate+=" ("+KEY_ID+" INTEGER PRIMARY KEY,";
+        strCreate+=" "+NAME+" TEXT,";
+        strCreate+=" "+QUARTER+" INTEGER";
+        strCreate+=" "+GRADE+" INTEGER";
+        strCreate+=");";
         db.execSQL(strCreate);
     }
 

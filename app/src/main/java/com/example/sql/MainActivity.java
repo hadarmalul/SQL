@@ -44,15 +44,15 @@ public class MainActivity extends AppCompatActivity {
         name = etNAME.getText().toString();
         address = etADD.getText().toString();
         strNum = etNUM.getText().toString();
-        num = Integer.parseInt(strNum);
+        num = Integer.parseInt(etNUM.getText().toString());
         strHnum = etHNUM.getText().toString();
-        Hnum = Integer.parseInt(strHnum);
+        Hnum = Integer.parseInt(etHNUM.getText().toString());
         mName = etMNAME.getText().toString();
         strMnum = etMNUM.getText().toString();
-        Mnum = Integer.parseInt(strMnum);
+        Mnum = Integer.parseInt(etMNUM.getText().toString());
         dName = etDNAME.getText().toString();
         strDnum = etDNUM.getText().toString();
-        Dnum = Integer.parseInt(strDnum);
+        Dnum = Integer.parseInt(etDNUM.getText().toString());
 
         ContentValues cv = new ContentValues();
         cv.put(Users.NAME, name);
