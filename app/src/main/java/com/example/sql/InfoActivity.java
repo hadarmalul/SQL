@@ -98,7 +98,8 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
             } else {
                 crsr = db.query(TABLE_GRADES, null, null, null, null, null, null);
                 int co1 = crsr.getColumnIndex(GradesC.KEY_ID);
-                int co2 = crsr.getColumnIndex(GradesC.NAME);
+//                int co2 = crsr.getColumnIndex(GradesC.NAME);
+                int co2 = 1;
                 int co3 = crsr.getColumnIndex(GradesC.QUARTER);
                 int co4 = crsr.getColumnIndex(GradesC.GRADE);
 
@@ -109,6 +110,7 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
                     int qua = crsr.getInt(co3);
                     int grade = crsr.getInt(co4);
                     String stGrades = "" + key + "," + name + "," + qua + "," + grade;
+//                    String stGrades = "" + key + "," + "stam" + "," + qua + "," + grade;
                     arr.add(stGrades);
                     crsr.moveToNext();
                 }
