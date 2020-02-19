@@ -46,7 +46,7 @@ public class Grades extends AppCompatActivity {
         Grade = Integer.parseInt(strGrade);
 
         ContentValues cv = new ContentValues();
-        cv.put(GradesC.NAME, name);
+        cv.put(GradesC.NAMES, name);
         cv.put(GradesC.QUARTER, Quar);
         cv.put(GradesC.GRADE, Grade);
 

@@ -26,7 +26,7 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
     HelperDB hlp;
     Cursor crsr;
     ListView lvT, lvR;
-    ArrayAdapter adp, adp2;
+    ArrayAdapter adp;
     ArrayList<String> arr = new ArrayList<>();
     int tableC;
 
@@ -60,11 +60,11 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-
+        db = hlp.getReadableDatabase();
         if (parent == lvT) {
             arr = new ArrayList<>();
             tableC = position + 1;
-            db = hlp.getReadableDatabase();
+
             /**
              * adds the data into the arraylist
              */
@@ -98,7 +98,7 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
             } else {
                 crsr = db.query(TABLE_GRADES, null, null, null, null, null, null);
                 int co1 = crsr.getColumnIndex(GradesC.KEY_ID);
-//                int co2 = crsr.getColumnIndex(GradesC.NAME);
+   //             int co2 = crsr.getColumnIndex(GradesC.NAMES);
                 int co2 = 1;
                 int co3 = crsr.getColumnIndex(GradesC.QUARTER);
                 int co4 = crsr.getColumnIndex(GradesC.GRADE);
@@ -106,10 +106,10 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
                 crsr.moveToFirst();
                 while (!crsr.isAfterLast()) {
                     int key = crsr.getInt(co1);
-                    String name = crsr.getString(co2);
+                    String names = crsr.getString(co2);
                     int qua = crsr.getInt(co3);
                     int grade = crsr.getInt(co4);
-                    String stGrades = "" + key + "," + name + "," + qua + "," + grade;
+                    String stGrades = "" + key + "," + names + "," + qua + "," + grade;
 //                    String stGrades = "" + key + "," + "stam" + "," + qua + "," + grade;
                     arr.add(stGrades);
                     crsr.moveToNext();
@@ -118,8 +118,8 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
             }
             crsr.close();
             db.close();
-            adp2 = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, arr);
-            lvR.setAdapter(adp2);
+            adp = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, arr);
+            lvR.setAdapter(adp);
         }
         /**
          * when listview row is clicked it deletes the row

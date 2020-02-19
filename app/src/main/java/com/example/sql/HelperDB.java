@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import static com.example.sql.GradesC.GRADE;
+import static com.example.sql.GradesC.NAMES;
 import static com.example.sql.GradesC.QUARTER;
 import static com.example.sql.GradesC.TABLE_GRADES;
 import static com.example.sql.Users.ADDRESS;
@@ -46,7 +47,7 @@ public class HelperDB extends SQLiteOpenHelper {
 
         strCreate="CREATE TABLE " + TABLE_GRADES;
         strCreate+=" ("+KEY_ID+" INTEGER PRIMARY KEY,";
-        strCreate+=" "+NAME+" TEXT,";
+        strCreate+=" "+NAMES+" TEXT,";
         strCreate+=" "+QUARTER+" INTEGER,";
         strCreate+=" "+GRADE+" INTEGER";
         strCreate+=");";

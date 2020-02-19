@@ -126,16 +126,17 @@ public class SortActivity extends AppCompatActivity implements AdapterView.OnIte
                 } else {
                     crsr=db.query(TABLE_GRADES, columns, selection, selectionArgs, groupBy, having, orderBy, limit);
                     int co1 = crsr.getColumnIndex(GradesC.KEY_ID);
-                    int co2 = crsr.getColumnIndex(GradesC.NAME);
+              //      int co2 = crsr.getColumnIndex(GradesC.NAMES);
+                    int co2 = 1;
                     int co3 = crsr.getColumnIndex(GradesC.QUARTER);
                     int co4 = crsr.getColumnIndex(GradesC.GRADE);
                     crsr.moveToFirst();
                     while (!crsr.isAfterLast()) {
                         int key = crsr.getInt(co1);
-                        String name = crsr.getString(co2);
+                        String names = crsr.getString(co2);
                         int qua = crsr.getInt(co3);
                         int grade = crsr.getInt(co4);
-                        String stGrades = "" + key + "," + name + "," + qua + "," + grade;
+                        String stGrades = "" + key + "," + names + "," + qua + "," + grade;
                         tbl.add(stGrades);
                         crsr.moveToNext();
                     }
