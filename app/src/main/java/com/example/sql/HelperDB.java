@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import static com.example.sql.GradesC.GRADE;
+
 import static com.example.sql.GradesC.NAMES;
 import static com.example.sql.GradesC.QUARTER;
 import static com.example.sql.GradesC.TABLE_GRADES;
